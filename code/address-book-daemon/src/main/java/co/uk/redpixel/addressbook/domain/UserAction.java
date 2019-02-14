@@ -1,4 +1,4 @@
-package co.uk.redpixel.addressbook.domain.model;
+package co.uk.redpixel.addressbook.domain;
 
 import co.uk.redpixel.addressbook.core.HttpRequest;
 import co.uk.redpixel.addressbook.core.HttpResponse;
