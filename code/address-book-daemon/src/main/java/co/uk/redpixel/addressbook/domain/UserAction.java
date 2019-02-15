@@ -46,7 +46,7 @@ public interface UserAction<T> extends Function<HttpRequest, HttpResponse<T>> {
             val contact1 = maybeContact1.get();
             val contact2 = maybeContact2.get();
 
-            return ok(format("%s is older than %s by %d years",
+            return ok(format("%s is older than %s by %d days",
                     contact1.getName(),
                     contact2.getName(),
                     contact1.getDaysOlderThan(contact2)));
