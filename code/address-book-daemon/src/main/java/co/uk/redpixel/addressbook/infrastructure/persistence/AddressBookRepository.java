@@ -9,13 +9,12 @@ import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
 
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.time.LocalDate;
 import java.util.Objects;
 import java.util.function.Consumer;
 import java.util.function.Function;
-import java.util.stream.Stream;
 
 import static co.uk.redpixel.addressbook.common.Error.INVALID_DOB;
 import static co.uk.redpixel.addressbook.common.Error.INVALID_GENDER;
@@ -28,14 +27,13 @@ public final class AddressBookRepository {
 
     @SneakyThrows
     public static AddressBook fetch() {
-
-        val fileUrl = ClassLoader.getSystemResource(SOURCE);
-
-        try (Stream<String> stream = Files.lines(Paths.get(fileUrl.toURI()))) {
+        try (val resourceStream = ClassLoader.getSystemResourceAsStream(SOURCE);
+             val resourceReader = new BufferedReader(new InputStreamReader(resourceStream))) {
             return AddressBook.of(
-                    stream.map(Try.of(parseLine().andThen(mapToContact()), logError()))
-                          .filter(Objects::nonNull)
-                          .collect(toList())
+                    resourceReader.lines()
+                                  .map(Try.of(parseLine().andThen(mapToContact()), logError()))
+                                  .filter(Objects::nonNull)
+                                  .collect(toList())
             );
         }
     }

@@ -1,6 +1,5 @@
 package co.uk.redpixel.addressbook.domain.model;
 
-import com.sun.istack.internal.NotNull;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -43,7 +42,7 @@ public class Contact implements Comparable<Contact> {
     }
 
     @Override
-    public int compareTo(@NotNull Contact other) {
+    public int compareTo(@NonNull Contact other) {
         return other.dateOfBirth.compareTo(dateOfBirth);
     }
 }

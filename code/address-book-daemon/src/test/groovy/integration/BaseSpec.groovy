@@ -2,10 +2,11 @@ package integration
 
 import org.testcontainers.containers.GenericContainer
 import org.testcontainers.images.builder.ImageFromDockerfile
+import spock.lang.Specification
 
 import java.nio.file.Paths
 
-class BaseSpec {
+abstract class BaseSpec extends Specification {
 
     private static final EXPOSED_PORT = 8090
 
