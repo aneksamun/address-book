@@ -19,7 +19,7 @@ public interface UserAction<T> extends Function<HttpRequest, HttpResponse<T>> {
 
     static UserAction<String> findOldest(AddressBook addressBook) {
         return request -> addressBook.findOldest()
-                .map(oldest -> ok(format("The oldest person is %s who is %s years old.", oldest.getName(), oldest.getName())))
+                .map(oldest -> ok(format("The oldest person is %s who is %s years old.", oldest.getName(), oldest.getAge())))
                 .orElseGet(() -> notFound("Address book has no contacts"));
     }
 

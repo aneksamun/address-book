@@ -34,15 +34,16 @@ public class Contact implements Comparable<Contact> {
     }
 
     public long getDaysOlderThan(Contact other) {
-        return DAYS.between(dateOfBirth, other.dateOfBirth);
+        val days = DAYS.between(dateOfBirth, other.dateOfBirth);
+        return days < 0 ? 0 : days;
     }
 
     public long getAge() {
-        return YEARS.between(LocalDate.now(), dateOfBirth);
+        return YEARS.between(dateOfBirth, LocalDate.now());
     }
 
     @Override
     public int compareTo(@NotNull Contact other) {
-        return dateOfBirth.compareTo(other.dateOfBirth);
+        return other.dateOfBirth.compareTo(dateOfBirth);
     }
 }
