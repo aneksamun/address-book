@@ -25,7 +25,7 @@ class HappyPathSpec extends BaseSpec {
         def message = EntityUtils.toString response.entity
 
         then: 'message should contain contact'
-        message == 'The oldest contact is Wes Jackson who is 44 years old'
+        message == 'The oldest person is Wes Jackson who is 44 years old.'
     }
 
     def 'counts males'() {
@@ -53,7 +53,7 @@ class HappyPathSpec extends BaseSpec {
         def message = EntityUtils.toString response.entity
 
         then: 'message has expected days value'
-        message == 'Bill oldest person is Wes Jackson who is 44 years old'
+        message == 'Bill McKnight is older than Paul Robinson by 2862 days'
     }
 }
 
