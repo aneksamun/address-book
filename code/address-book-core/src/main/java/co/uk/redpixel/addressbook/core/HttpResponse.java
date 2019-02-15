@@ -43,7 +43,11 @@ public final class HttpResponse<T> {
     }
 
     public static <T> HttpResponse<T> notFound() {
-        return new HttpResponse<>(NOT_FOUND, Optional.empty());
+        return notFound(null);
+    }
+
+    public static <T> HttpResponse<T> notFound(T body) {
+        return new HttpResponse<>(NOT_FOUND, Optional.ofNullable(body));
     }
 
     public static <T> HttpResponse<T> badRequest(T body) {

@@ -6,7 +6,9 @@ import static java.lang.String.format;
 
 @AllArgsConstructor
 public enum Error {
-    CONFIG_LOAD_ERROR("Cannot load configuration: %s");
+    CONFIG_LOAD_ERROR("Cannot load configuration: %s"),
+    INVALID_GENDER("Could parse gender of %s"),
+    INVALID_DOB("Could not parse date of birth %s");
 
     private String errorMessage;
 
