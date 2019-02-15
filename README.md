@@ -34,4 +34,4 @@ docker-compose up -d
 docker ps
 docker-compose stop
 ```
-Please not requires Java 8 on path (otherwise no Jar and Docker build will work)
+Please note requires Java 8 on path (otherwise no Jar and Docker build will work)
