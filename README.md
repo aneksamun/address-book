@@ -1,6 +1,6 @@
 # Address Book  
 
-Application reads the attached AddressBook file and answer the following questions:
+Application reads the attached AddressBook file and answers on the following questions:
 
     How many males are in the address book?
     Who is the oldest person in the address book?
@@ -21,7 +21,6 @@ Application reads the attached AddressBook file and answer the following questio
 ```
 ./mvnw clean install
 ```
-- run via IntelliJ by running/debugging configuration
 - run JAR
 ```
 cd code/address-book-daemon/target/
@@ -34,4 +33,3 @@ docker-compose up -d
 docker ps
 docker-compose stop
 ```
-Please note requires Java 8 on path (otherwise no Jar and Docker build will work)
