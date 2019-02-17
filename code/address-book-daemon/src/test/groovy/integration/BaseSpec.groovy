@@ -8,7 +8,7 @@ import java.nio.file.Paths
 
 abstract class BaseSpec extends Specification {
 
-    private static final EXPOSED_PORT = 8090
+    private static final EXPOSED_PORT = 8091
 
     static enum Path {
         COMPARE('/contacts/%s/compare/%s'),
