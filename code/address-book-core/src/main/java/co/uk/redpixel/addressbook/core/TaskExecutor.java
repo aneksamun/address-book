@@ -34,7 +34,7 @@ final class TaskExecutor implements Closeable {
             executor.shutdown();
             executor.awaitTermination(3, SECONDS);
         } catch (Exception exception ) {
-            log.error("An error occurred awaiting task completion: {}", exception);
+            log.error("An error occurred awaiting task completion: {0}", exception);
         }
     }
 }

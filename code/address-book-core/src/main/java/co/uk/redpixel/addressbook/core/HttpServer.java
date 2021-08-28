@@ -59,7 +59,7 @@ public final class HttpServer implements Closeable {
                             .ifPresent(Handler::handle);
                 }
             } catch (Exception exception) {
-                log.error("An error occurred processing request: {}", exception);
+                log.error("An error occurred processing request: {0}", exception);
             }
         }
     }
